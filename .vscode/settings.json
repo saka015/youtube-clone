@@ -1,0 +1,12 @@
+{
+    "task.quickOpen.showAll": true,
+    "thunder-client.sidebar.showActivityFromCollection": true,
+    "workbench.view.alwaysShowHeaderActions": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.editor.closeOnFileDelete": true,
+    "workbench.settings.openDefaultSettings": true,
+    "debug.showSubSessionsInToolBar": true,
+    "debug.autoExpandLazyVariables": true,
+    "window.commandCenter": false,
+    "window.closeWhenEmpty": true
+}
