@@ -1,25 +1,30 @@
-import { BrowserRouter , Routes ,Route } from "react-router-dom";
-import {Box} from '@mui/material'
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import {Navbar ,Feed , VideoDetail , ChannelDetail , SearchFeed} from './Component'
+import Header from "./components/Header";
+import Feed from "./components/Feed";
+import SearchResult from "./components/SearchResult";
+import VideoDetails from "./components/VideoDetails";
+import { AppContext } from "./context/contextApi";
 
+const App = () => {
+    return (
+        <AppContext>
+            <BrowserRouter>
+                <div className="flex flex-col h-full">
+                    <Header />
+                    <Routes>
+                        <Route path="/" exact element={<Feed />} />
+                        <Route
+                            path="/searchResult/:searchQuery"
+                            element={<SearchResult />}
+                        />
+                        <Route path="/video/:id" element={<VideoDetails />} />
+                    </Routes>
+                </div>
+            </BrowserRouter>
+        </AppContext>
+    );
+};
 
-const App = () => (
-
-    <BrowserRouter>
-       
-       <Box sx={{backgroundColor:'#000'}}></Box>
-       <Navbar />
-
-       <Routes>
-        <Route path="/" exact element={<Feed />} />
-        <Route path="/video/:id"  element={<VideoDetail />} />
-        <Route path="/channel/:id"  element={<ChannelDetail />} />
-        <Route path="/search/:searchTerm"  element={<SearchFeed />} />
-
-       </Routes>
-
-    </BrowserRouter>
-);
-
-export default App
+export default App;
